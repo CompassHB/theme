@@ -30,3 +30,18 @@ function total_child_enqueue_parent_theme_style() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'total_child_enqueue_parent_theme_style' );
+
+/** 
+ * Register theme custom logo
+ * Used for Scripture of the Day logo
+ */
+function theme_prefix_setup() {
+	
+	add_theme_support( 'custom-logo', array(
+		'height'      => 250,
+		'width'       => 500,
+		'flex-width' => true,
+	) );
+
+}
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
